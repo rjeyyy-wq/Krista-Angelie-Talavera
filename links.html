@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Links – Nurse Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="nav">
+  <div class="container">
+    <div class="brand">🩺 Nurse</div>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="gallery.html">Photo Gallery</a>
+      <a href="guestbook.html">Guestbook & Email</a>
+      <a href="links.html">My Favorite Links</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+
+  <section class="card">
+    <h1>My Favorite Links</h1>
+    <ul>
+      <li><a href="https://youtu.be/Ri_a4z2yGYM?si=bpzfDEK_TFAW4I1X" target="_blank" rel="noopener">Kimi no Na wa. Orchestra Concert - Nandemonaiya / RADWIMPS</a></li>
+      <li><a href="https://youtu.be/bIB8EWqCPrQ?si=o7njQN5y85IWZTEz" target="_blank" rel="noopener">Ed Sheeran - Supermarket Flowers</a></li>
+      <li><a href="https://youtu.be/0lpXPWKpSY4?si=6sAFnduFdQQG2j9C" target="_blank" rel="noopener">How to Make Millions Before Grandma Dies</a></li>
+    </ul>
+    <p>Back to <a href="index.html"><b>Home</b></a>.</p>
+  </section>
+
+</div>
+<footer>
+  <div class="container">
+    <div>&copy; <span id="yr"></span> Nurse Portfolio</div>
+    <div class="small">Compassion • Competence • Care</div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('.nav');
+  var btn = document.querySelector('.hamburger');
+  if(!nav || !btn) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+
+</body>
+</html>

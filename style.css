@@ -1,0 +1,161 @@
+:root{
+  --bg:#0f6b64;
+  --bg2:#0b4e49;
+  --card:#ffffff;
+  --ink:#132022;
+  --accent:#7ee3d6;
+  --soft:#ecf8f6;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#f5fbfb}
+a{color:var(--bg);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1140px;margin:auto;padding:20px}
+.nav{background:linear-gradient(90deg,var(--bg),var(--bg2));color:#fff;position:sticky;top:0;z-index:5}
+.nav .container{display:flex;align-items:center;gap:24px}
+.nav a{color:#fff;font-weight:600}
+.brand{font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:10px}
+.brand .badge{background:#09413d;color:#cffff8}
+.grid{display:grid;gap:22px}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--card);border-radius:16px;box-shadow:0 10px 30px rgba(3,32,40,.08);padding:22px;border:1px solid #e5f2f0}
+h1,h2,h3{margin:.2em 0 .4em}
+h1{font-size:2.2rem}
+h2{font-size:1.6rem;border-bottom:3px solid var(--accent);display:inline-block;padding-bottom:6px}
+footer{margin-top:40px;background:#0b4e49;color:#e9fffb}
+footer .container{display:flex;justify-content:space-between;align-items:center;padding:16px 20px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border:1px solid #e5eaf0;text-align:left}
+th{background:#f0fbf9}
+.btn{background:var(--bg);color:#fff;border:none;padding:12px 16px;border-radius:12px;cursor:pointer;font-weight:600}
+.btn:hover{opacity:.95;transform:translateY(-1px)}
+.form fieldset{border:1px solid #e0eeee;border-radius:12px;padding:14px}
+.form label{display:block;margin:.6rem 0 .25rem}
+.form input,.form textarea,.form select{width:100%;padding:10px;border:1px solid #cfe1e1;border-radius:10px}
+.badge{display:inline-block;background:#eafaf7;color:#0b5e5e;padding:5px 10px;border-radius:999px;font-size:.88rem;margin-right:6px}
+.hero{position:relative;overflow:hidden;border-radius:18px;background:linear-gradient(135deg,#d8fff6,#f8fffd)}
+.hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;padding:26px}
+.hero h1{font-size:2.4rem;margin:0 0 8px}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{background:#0f6b6415;border:1px solid #bfeee8;padding:8px 12px;border-radius:999px;font-weight:600}
+.hero-img {
+  width: auto;                /* Let width adjust automatically */
+  height: 420px;              /* Increase height for portrait effect */
+  border-radius: 16px;
+  object-fit: cover;          /* Ensures it fills area without distortion */
+  border: 1px solid #def3f1;
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  aspect-ratio: 3 / 4;        /* Keeps portrait proportion (3:4 ratio) */
+  display: block;
+  margin: 0 auto;             /* Centers the image horizontally */
+}
+.about-section {
+  align-items: center;
+  gap: 40px; /* space between columns */
+}
+
+.about-section img.hero-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid #def3f1;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+  margin: 0 auto;
+  display: block;
+}
+
+.about-section h1 {
+  margin-top: 0;
+  color: var(--bg);
+}
+
+.about-section p {
+  line-height: 1.6;
+}
+
+.gallery-section {
+  text-align: center;
+  background: var(--soft);
+  border: 1px solid #e3f1f0;
+  padding: 30px 26px;
+  border-radius: 18px;
+}
+
+.gallery-section h1 {
+  color: var(--bg);
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.gallery-section .intro-text {
+  font-size: 1rem;
+  color: #355351;
+  margin-bottom: 28px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Bigger gallery images */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 240px; /* Increased height */
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #d7ece9;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  border-color: var(--accent);
+}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:12px;border:1px solid #e7edf5;box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.iframe-wrap{position:relative;padding-top:56.25%}
+.iframe-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.small{font-size:.9rem;opacity:.85}
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal{background:#fff;border-radius:16px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);border:1px solid #e6f0ee}
+.modal header{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid #ecf3f2}
+.modal header .icon{font-size:1.4rem}
+.modal .body{padding:18px}
+.modal .actions{display:flex;justify-content:flex-end;gap:10px;padding:0 18px 18px}
+.modal .actions .btn{padding:10px 14px}
+.modal-success .icon{color:#0f6b64}
+.modal-backdrop.show{display:flex}
+@media (max-width:900px){
+  .grid-2{grid-template-columns:1fr}
+  .hero-inner{grid-template-columns:1fr}
+}
+
+
+/* --- Responsive nav --- */
+.hamburger{display:none;background:transparent;border:0;cursor:pointer;padding:8px;margin-left:auto}
+.hamburger span{display:block;width:28px;height:3px;background:#fff;margin:6px 0;transition:transform .2s ease, opacity .2s ease}
+.nav .nav-links{display:flex;gap:24px;align-items:center}
+@media (max-width: 768px){
+  .nav .container{flex-wrap:wrap}
+  .hamburger{display:block}
+  .nav .nav-links{display:none;flex-direction:column;gap:16px;width:100%;padding:10px 0}
+  .nav.open .nav-links{display:flex}
+}
+/* --- Hamburger animation when open --- */
+.nav.open .hamburger span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.nav.open .hamburger span:nth-child(2){opacity:0}
+.nav.open .hamburger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+

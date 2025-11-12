@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Home – Nurse Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="nav">
+  <div class="container">
+    <div class="brand">🩺 Nurse</div>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="gallery.html">Photo Gallery</a>
+      <a href="guestbook.html">Guestbook & Email</a>
+      <a href="links.html">My Favorite Links</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+
+  <section class="hero card">
+    <div class="hero-inner">
+      <div>
+        <h1>Krista Angelie Talavera <span class="badge">Student Nurse</span></h1>
+        <p><b>Holistic, evidence-based care</b> with a heart for community health and patient education.</p>
+        <div class="pills">
+          <span class="pill">Healing with Compassion</span>
+          <span class="pill">Serving the Community</span>
+          <span class="pill">Inspiring Better Health</span>
+        </div>
+        <p style="margin-top:50px"><a class="btn" href="guestbook.html">Guestbook</a></p>
+      </div>
+      <div>
+        <img class="hero-img" src="img/home.png" alt="Nurse at work" />
+      </div>
+    </div>
+  </section>
+
+  <div class="grid grid-2 section">
+    <section class="card">
+      <h2>Snapshot</h2>
+      <table>
+        <tr><th>Field</th><th>Value</th></tr>
+        <tr><td>Name</td><td><strong>Krista Angelie Talavera</strong></td></tr>
+        <tr><td>Track</td><td>BS Nursing – Student Nurse</td></tr>
+        <tr><td>Interests</td><td>Wound Care, Health Literacy, Telehealth</td></tr>
+      </table>
+      <p>Explore <a href="about.html"><u>About Me</u></a> for certifications and clinical skills.</p>
+    </section>
+
+    <section class="card">
+      <h2>About Me</h2>
+      <div class="iframe-wrap">
+        <iframe src="about_no_nav.html" title="About preview"></iframe>
+      </div>
+    </section>
+  </div>
+
+</div>
+<footer>
+  <div class="container">
+    <div>&copy; <span id="yr"></span> Nurse Portfolio</div>
+    <div class="small">Compassion • Competence • Care</div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('.nav');
+  var btn = document.querySelector('.hamburger');
+  if(!nav || !btn) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+
+</body>
+</html>

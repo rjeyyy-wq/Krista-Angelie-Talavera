@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guestbook & Email – Nurse Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="nav">
+  <div class="container">
+    <div class="brand">🩺 Nurse</div>
+    <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="gallery.html">Photo Gallery</a>
+      <a href="guestbook.html">Guestbook & Email</a>
+      <a href="links.html">My Favorite Links</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+
+  <section class="card">
+    <h1>Guestbook &amp; Email</h1>
+    <form id="guestForm" class="form" action="#" method="post">
+      <fieldset>
+        <legend>Contact / Guestbook</legend>
+        <label for="name">Full Name</label>
+        <input id="name" name="name" placeholder="Your name" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        <label for="topic">Inquiry Type</label>
+        <select id="topic" name="topic">
+          <option>General</option>
+          <option>Patient Education</option>
+          <option>Community Project</option>
+          <option>Career Opportunity</option>
+        </select>
+        <label for="msg">Message</label>
+        <textarea id="msg" name="message" rows="6" placeholder="Write your message..."></textarea>
+        <button class="btn" type="submit">Send</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <!-- Success Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal modal-success" role="document">
+      <header><span class="icon">✅</span><strong>Message sent</strong></header>
+      <div class="body">
+        <p>Thanks for reaching out! Your email draft has been opened. You can review and send it from your mail app.</p>
+      </div>
+      <div class="actions">
+        <button class="btn" id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const form = document.getElementById('guestForm');
+    const modal = document.getElementById('modalBackdrop');
+    const closeBtn = document.getElementById('closeModal');
+    function showModal(){
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden','false');
+      closeBtn.focus();
+    }
+    function hideModal(){
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden','true');
+    }
+    closeBtn.addEventListener('click', hideModal);
+    modal.addEventListener('click', e => { if(e.target === modal) hideModal(); });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const topic = document.getElementById('topic').value;
+      const msg = document.getElementById('msg').value.trim();
+      const to = 'example@example.com';
+      const subject = encodeURIComponent('Guestbook: ' + topic + ' — ' + name);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Topic: ' + topic + '\n\n' +
+        msg + '\n\n— Sent from Nurse Portfolio'
+      );
+      const mailto = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+      // Open user's email client without leaving the page
+      window.open(mailto, '_blank');
+      // Show success modal
+      showModal();
+      form.reset();
+    });
+  })();
+  </script>
+
+</div>
+<footer>
+  <div class="container">
+    <div>&copy; <span id="yr"></span> Nurse Portfolio</div>
+    <div class="small">Compassion • Competence • Care</div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('.nav');
+  var btn = document.querySelector('.hamburger');
+  if(!nav || !btn) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
+
+</body>
+</html>
